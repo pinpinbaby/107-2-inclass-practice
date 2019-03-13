@@ -10,3 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 hello,my name is pin
+
+```{r}
+a <- 2
+3 -> b
+```
+
