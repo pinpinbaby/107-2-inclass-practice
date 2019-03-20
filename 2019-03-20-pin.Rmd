@@ -58,3 +58,11 @@ dtObject<-ymd_hms("1970-01-01 00:02:53")
 class(dtObject)
 ```
 
+```{r}
+typeof(dtObject)
+```
+
+```{r}
+as.integer(dtObject)
+```
+
