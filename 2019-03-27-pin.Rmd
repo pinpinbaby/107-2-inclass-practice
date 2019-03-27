@@ -94,3 +94,14 @@ aL-b
 class(aL-b)
 ```
 
+```{r}
+time1 <- ymd("2019-08-11")
+time2 <- ymd("2000-02-01")
+time1-time2
+
+```
+
+```{r}
+class(time1-time2)
+```
+
