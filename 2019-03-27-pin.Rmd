@@ -39,3 +39,13 @@ twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
 AraguainaDateTime <- with_tz(twDateTime,tzone="America/Araguaina")
 ```
 
+```{r}
+typeof(AraguainaDateTime)
+```
+
+```{r}
+as.double(AraguainaDateTime)
+as.double(twDateTime)
+```
+
+
