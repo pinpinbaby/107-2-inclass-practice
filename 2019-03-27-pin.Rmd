@@ -48,4 +48,11 @@ as.double(AraguainaDateTime)
 as.double(twDateTime)
 ```
 
+```{r}
+twDateTime <- mdy_hms("3/14/2019 8:18:47")
+```
+
+```{r}
+twDateTime <- ymd("2018-09-11")
+```
 
