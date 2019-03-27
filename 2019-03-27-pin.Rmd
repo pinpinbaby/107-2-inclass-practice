@@ -105,3 +105,29 @@ time1-time2
 class(time1-time2)
 ```
 
+```{r}
+startingDate <- ymd("2000-02-17")
+```
+
+```{r}
+startingDate + years(1)
+```
+
+```{r}
+startingDate + dyears(1)
+```
+
+```{r}
+x <- 5
+y <- 7
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+```
+
+```{r}
+x==y
+x>y
+x!=y
+x<y
+```
+
