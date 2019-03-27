@@ -60,3 +60,37 @@ twDateTime <- ymd("2018-09-11")
 twDateTime <- mdy("March 3, 2019")
 ```
 
+```{r}
+as.integer(ymd("1970-01-01"))
+as.integer(ymd("1970-01-02"))
+as.integer(ymd("2019-03-11"))
+```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+```
+
+
+```{r}
+a+bL
+class(a+bL)
+```
+
+```{r}
+aL+bL
+class(aL+bL)
+```
+
+```{r}
+aL-bL
+class(aL-bL)
+```
+
+```{r}
+aL-b
+class(aL-b)
+```
+
