@@ -1,11 +1,47 @@
 ---
 title: '2019-04-10'
-author: "林茂廷"
+author: "陳品瑄"
 date: "4/10/2019"
 output: html_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(stringr)
+```
+
+```{r}
+course <- c("個體經濟學","總體經濟學","總體經濟學")
+str_subset(course,"經濟學")
+```
+
+```{r}
+str_detect(course,"經濟學")
+```
+
+```{r}
+studentID<-c(
+  '410177115','410176080','410174233','410177011','410182045','410176014')
+
+str_sub(studentID,5,6)
+str_sub(studentID,2,4)
+```
+
+```{r}
+month <- c("4","5","6")
+day <- c("3","6","7")
+
+char1 <- c("月","月","月")
+char2 <- c("日","日","日")
+month
+char1
+day 
+char2
+str_c(month,char1,day,char2)
+str_c(month,day,sep="-")
 ```
 
