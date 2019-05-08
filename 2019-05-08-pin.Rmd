@@ -1,0 +1,102 @@
+---
+title: '2019-05-08'
+author: "pin"
+date: "5/08/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+x <- as.character(round(runif(10)*100),10)
+x
+```
+
+```{r}
+library(lubridate); library(stringr); library(dplyr); library(readr); library(purrr)
+```
+
+
+
+考試1.
+```{r}
+class(x)
+logicBig <- (as.integer(x) > 50)
+logicBig
+typeof(x)
+```
+
+5.
+```{r}
+
+sample(99:103,15,replace = T)-> yy
+sample(1:12,15,replace=T)-> mm
+str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
+twDates
+```
+5.1 去除字元
+請將twDates中的“民國”及“月”都去除，並存在twDates2答案物件，如：“民國099年2月”會變成“099年2”
+```{r}
+twDates2 <- str_replace_all(twDates,"(民國)|(月)","")
+twDates2
+```
+
+```{r}
+str_replace(twDates,"民國","") -> twDates3
+str_replace(twDates2,"月","") -> twDates3
+str_replace_all(twDates,"(民國)|(月)","")
+twDates3
+```
+```{r}
+westYears <- as.integer(str_sub(twDates,3,5))+1911
+westYears
+```
+
+5.3
+```{r}
+mm <- str_split(twDates2,"年")
+month <- map(mm,~.[[2]])
+unlist(month)
+year <-westYears
+westDates <- ymd(str_c(year,month,"01",sep = "-"))
+westDates
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
