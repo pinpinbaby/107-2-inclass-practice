@@ -149,7 +149,21 @@ transcriptDataFinal[aa,]
 ```
 
 
+```{r}
+abc <- function(x,.alpha){
+  abcd <- x+.alpha
+  return(abcd)
+}
+abc
+```
 
+```{r}
+supplyfunction <- function(a,b,P){
+  Qs <- a + b*P
+  return(Qs)
+}
+supplyfunction(7,8,10)
+```
 
 
 
