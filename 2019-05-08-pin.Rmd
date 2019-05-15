@@ -85,7 +85,25 @@ names(sampledTranscriptData) <-
   c('學號','學期成績','學分數','學年','學期','必選修類別（必／選／通）','系級','科目名稱','年級','學屆')
 ```
 
+7.3 產生學系 str_replace_all
+請在sampledTranscriptData新增一個「學系」變數，存在sampledTranscriptData$學系答案物件裡，它是「系級」元素值去除數字1,2,3,4的結果。例如：系級為“經濟學系2”, 學系值即為“經濟學系”。（hint: 可透過str_replace()或str_replace_all()把字串中的數字去除。）
+```{r}
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$系級,"1","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"2","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"3","")
+sampledTranscriptData$學系 <- str_replace(sampledTranscriptData$學系,"4","")
+str_replace(sampledTranscriptData,"[:digit:]","")
 
+sampledTranscriptData$學系 
+```
+
+```{r}
+(sampledTranscriptData$系碼!="73" & 
+   sampledTranscriptData$學系=="經濟學系") -> logiCheck
+sampledTranscriptData$學號[logiCheck] %>% unique() -> changeMajorStudent
+
+changeMajorStudent
+```
 
 
 
