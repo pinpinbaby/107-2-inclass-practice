@@ -123,12 +123,30 @@ library(lubridate)
 time <- ymd(exData3$期間)
 class(exData3$期間)
 ```
+```{r}
+exData3[["isAsiaCrisis"]] <- time >=ymd("1997-06-01")&time<=ymd("1998-12-01") 
+exData3
+```
+
+```{r}
+sum(unlist(exData3[,4]))
+```
 
 
+```{r}
+exData3[exData3$isAsiaCrisis==T,]
+exData3[exData3$isAsiaCrisis==T ,]
+```
 
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
 
-
-
+```{r}
+aa <- transcriptDataFinal$學號=="92aS67fee"
+transcriptDataFinal[aa,]
+```
 
 
 
