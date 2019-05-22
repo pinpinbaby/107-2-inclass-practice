@@ -68,11 +68,19 @@ change <-with_tz(date,tz="Asia/Taipei")
 
 ```{r}
 ymd_hms_tzChange <-function(input,fromTzone,toTzone){
-  answer <- with_tz(ymd_hms(input,tz=fromTzone),tz=toTzone)
+  answer <- with_tz(ymd_hms(input,tz=fromTzone),tzone=toTzone)
    return(answer)}
 
 ```
 
+```{r}
+date_convert_twYM <- function(x){
+yyyy<-as.integer(str_extract(x,"(?<=(民國))[:digit:]+"))+1911
+mm<-str_extract(x,"[:digit:]+(?=月)")
+answer<- ymd(str_c(yyyy,mm,"01",sep="-"))
+return(answer)
+}
+```
 
 
 
