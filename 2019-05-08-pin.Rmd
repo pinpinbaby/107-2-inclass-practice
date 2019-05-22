@@ -80,7 +80,7 @@ names(invoiceList) <-
 
 ##7
 ```{r}
-load("sampledTranscriptData.Rda")
+load("dsampledTranscriptData.Ra")
 names(sampledTranscriptData) <- 
   c('學號','學期成績','學分數','學年','學期','必選修類別（必／選／通）','系級','科目名稱','年級','學屆')
 ```
