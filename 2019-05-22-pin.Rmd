@@ -50,9 +50,28 @@ invoiceList$UTC時間[tt] <- with_tz(ymd_hms(invoiceList$訂單時區之下單�
 ```
 
 ```{r}
-
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+  
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+  
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  return(GPA)
+}
+```
+#請把以America/New_York時區輸入的時間字串"1973-02-21 12:05:22"，轉成date time class, 再改成Asia/Taipei時間顯示。
+```{r}
+date <-ymd_hms("1973-02-21 12:05:22",tz="America/New_York")
+change <-with_tz(date,tz="Asia/Taipei")
 ```
 
+```{r}
+ymd_hms_tzChange <-function(input,fromTzone,toTzone){
+  answer <- with_tz(ymd_hms(input,tz=fromTzone),tz=toTzone)
+   return(answer)}
+
+```
 
 
 
