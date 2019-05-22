@@ -1,0 +1,99 @@
+---
+title: '2019-05-22'
+author: "陳品瑄"
+date: "5/22/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+load("C:/Users/Pin Syuan Chen/Desktop/git/pinbaby/107-2-inclass-practice/invoiceList.Rda")
+
+names(invoiceList) <-
+  c('訂單時區','訂單時間(以訂單時區顯示)','UTC時間')
+```
+
+```{r}
+library(lubridate)
+(invoiceList$訂單時區=="America/New_York") -> nyLogical
+(invoiceList$訂單時區=="Asia/Taipei") -> tpLogical
+
+invoiceList$UTC時間[nyLogical] <-
+  with_tz(ymd_hms(invoiceList$`訂單時區之下單時間`[nyLogical],
+          tz="America/New_York"),tzone="UTC")
+invoiceList$UTC時間[tpLogical] <-
+  with_tz(ymd_hms(invoiceList$`訂單時區之下單時間`[tpLogical],
+          tz="Asia/Taipei"),tzone="UTC")
+
+invoiceList 
+```
+
+```{r}
+library(readr)
+invoiceList <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/invoiceList.csv",
+col_types = cols(訂單時間.以訂單時區顯示. = col_character()))
+names(invoiceList)[[2]] <- "訂單時區之下單時間"
+```
+
+```{r}
+tt <- (invoiceList$訂單時區=="Asia/Taipei")
+
+invoiceList$tt <- tt
+
+invoiceList$UTC時間[tt] <- with_tz(ymd_hms(invoiceList$訂單時區之下單時間[tt],tz="Asia/Taipei"),tz="UTC")
+
+```
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
