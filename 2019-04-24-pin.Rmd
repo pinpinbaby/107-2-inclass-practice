@@ -102,7 +102,8 @@ classSurvey[,c(4,5)]
 ```
 
 ```{r}
-classSurvey[=="女",c(4,5)]
+classSurvey$性別=="女" -> gg
+classSurvey[classSurvey$性別=="女",c(4,5)]
 ```
 
 
